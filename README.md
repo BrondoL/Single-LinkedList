@@ -1,9 +1,9 @@
 # Daftar Anggota Kelompok
 
 	Nama :  1. Aulia Ahmad Nabil 	(1817051074)
-			2. Arbi Hidayatulloh 	(1817051045)
-			3. Asbiq Al Alawi      	(1817051026)
-     		4. Pandi Barep Arianza 	(1817051002)
+	2. Arbi Hidayatulloh 	(1817051045)
+	3. Asbiq Al Alawi      	(1817051026)
+	4. Pandi Barep Arianza 	(1817051002)
 
 # Tugas Kelompok
 
