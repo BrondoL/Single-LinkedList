@@ -1,3 +1,5 @@
+[SreenShot](https://github.com/BrondoL/Single-LinkedList/blob/master/ScreenShot/ss.png)
+
 # Daftar Anggota Kelompok
 
 	Nama :  1. Aulia Ahmad Nabil 	(1817051074)
