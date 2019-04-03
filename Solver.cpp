@@ -20,11 +20,11 @@ int isEmpty(){
         return 0;
     }
 }
-void insertDepan(int databaru)
+void tambahDepan(int file )
 {
     TNode *baru;
     baru =new TNode;
-    baru->data=databaru;
+    baru->data=file;
     baru->next=NULL;
     if(isEmpty()==1)
     {
@@ -34,13 +34,13 @@ void insertDepan(int databaru)
         baru->next=head;
         head=baru;
     }
-    cout<<"Input berhasil";
+    cout<<"Input berhasil \n";
 }
 
-void insertBelakang(int databaru){
+void tambahBelakang(int file){
     TNode *baru;
     baru=new TNode;
-    baru->data=databaru;
+    baru->data=file;
     baru->next=NULL;
     if(isEmpty()==1){
         head=baru;
@@ -51,7 +51,7 @@ void insertBelakang(int databaru){
         tail->next=baru;
         tail=baru;
     }
-    cout<<"\n Input berhasil"<<endl;
+    cout<<" Input berhasil \n"<<endl;
 }
 
 
