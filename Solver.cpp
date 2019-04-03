@@ -58,10 +58,9 @@ void tambahBelakang(int file){
 // =====================================Task 3
 void hapusDepan(){
 	TNode *hapus;
-	int h;
 	if (isEmpty()==0){
 		hapus = head;
-		h = head->data;
+		head->data;
 		if(head != tail){
 			hapus = head;
 			head = head->next;
@@ -71,16 +70,15 @@ void hapusDepan(){
 			head=NULL;
 			tail=NULL;
 		}
-		cout<<"Terhapus\n";
-	} else cout<<"Kosong\n";
+		cout<<"\nTerhapus\n";
+	} else cout<<"\nNode Masih Kosong\n";
 }
 // =====================================Task 4
 void hapusBelakang(){
 	TNode *hapus,*help;
 	if (isEmpty()==0){
-		int h;
 		if(head == tail){
-			h = tail->data;
+			tail->data;
 			head = NULL;
 			tail = NULL;
 		}else{
@@ -90,12 +88,12 @@ void hapusBelakang(){
 			}
 			hapus = tail;
 			tail = help;
-			h = hapus->data;
+			hapus->data;
 			tail->next = head;
 			delete hapus;
 		}
-		cout<<"Terhapus\n";
-	} else cout<<"Kosong\n";
+		cout<<"\nTerhapus\n";
+	} else cout<<"\nNode Masih Kosong\n";
 }
 // =====================================Task 5
 void tambah_pos(int pos, int input){
