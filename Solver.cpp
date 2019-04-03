@@ -51,7 +51,49 @@ void tambahBelakang(int file){
         tail->next=baru;
         tail=baru;
     }
-    cout<<" Input berhasil \n"<<endl;
+    cout<<" Input berhasil \n";
+}
+
+void hapusDepan(){
+	TNode *hapus;
+	if (isEmpty()==0){
+		int h;
+		hapus = head;
+		h = head->data;
+		if(head != tail){
+			hapus = head;
+			head = head->next;
+			tail->next = head;
+			delete hapus;
+		}else{
+			head=NULL;
+			tail=NULL;
+		}
+		cout<<"Terhapus\n";
+	} else cout<<"Kosong\n";
+}
+
+void hapusBelakang(){
+	TNode *hapus,*help;
+	if (isEmpty()==0){
+		int h;
+		if(head == tail){
+			h = tail->data;
+			head = NULL;
+			tail = NULL;
+		}else{
+			help = head;
+			while(help->next != tail){
+				help = help->next;
+			}
+			hapus = tail;
+			tail = help;
+			h = hapus->data;
+			tail->next = head;
+			delete hapus;
+		}
+		cout<<"Terhapus\n";
+	} else cout<<"Kosong\n";
 }
 
 
