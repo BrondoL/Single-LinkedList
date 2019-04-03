@@ -134,6 +134,55 @@ void delete_position(int pos)
 		cout << "gagal" ;
 	
 }
+// =====================================Task 7
+void display()
+		{
+			TNode *temp=new TNode;
+			temp=head;
+			while(temp!=NULL)
+			{
+				cout<<temp->data<<"\t";
+				temp=temp->next;
+			}
+}
+
+int hasil ()
+{
+	int val;
+	cout<<"\n--------------------------------------------------\n";
+	cout<<"----------------tampilan semua node----------------";
+	cout<<"\n--------------------------------------------------\n";
+	display();
+	cout<<"\n--------------------------------------------------\n";
+	cout<<"------------------tambah belakang------------------";
+	cout<<"\n--------------------------------------------------\n";
+	tambahBelakang(val);
+	display();
+	cout<<"\n--------------------------------------------------\n";
+	cout<<"-------------------tambahan awal------------------";
+	cout<<"\n--------------------------------------------------\n";
+	tambahDepan(val);
+	display();
+	
+	cout<<"\n--------------------------------------------------\n";
+	cout<<"--------------------hapus depan--------------------";
+	cout<<"\n--------------------------------------------------\n";
+	hapusDepan();
+	display();
+	cout<<"\n--------------------------------------------------\n";
+	cout<<"-------------------hapus akhir---------------------";
+	cout<<"\n--------------------------------------------------\n";
+	hapusBelakang();
+	display();
+	cout<<"\n--------------------------------------------------\n";
+	cout<<"-----------------hapus posisi node----------------";
+	cout<<"\n--------------------------------------------------\n";
+	void delete_position(int pos);
+	display();
+	cout<<"\n--------------------------------------------------\n";
+	system("pause");
+	return 0;
+}
 
 int nama_menu();
 
@@ -168,9 +217,11 @@ int main()
 					break;
 			case 6:
 					cout << "Ingin Menghapus Node di posisi berapa : ";cin>>pos;
-					//hapus_pos(pos);
+					void delete_position(int pos);
 					break;
-			case 7:
+			case 7:		cout<<"tampilan seluruh node : ";
+					int hasil();
+					
 					//show();
 					break;
 			default:
