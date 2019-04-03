@@ -115,6 +115,26 @@ void tambah_pos(int pos, int input){
 		cout << "Kosong" ;
 }
 
+// =====================================Task 6
+void delete_position(int pos)
+  {
+	if(isEmpty()==0){
+	    TNode *cur=new TNode;
+   		TNode *previous=new TNode;
+   		cur=head;
+  		 for(int i=1;i<pos;i++)
+  		 {
+    	previous=cur;
+   		cur=cur->next;
+   		}
+   		previous->next=cur->next;
+  		cout<<" berhasil dihapus \n";}
+
+	else
+		cout << "gagal" ;
+	
+}
+
 int nama_menu();
 
 int main()
