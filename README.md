@@ -1,4 +1,4 @@
-[SreenShot](https://github.com/BrondoL/Single-LinkedList/blob/master/ScreenShot/ss.png)
+![SreenShot](https://github.com/BrondoL/Single-LinkedList/blob/master/ScreenShot/ss.png)
 
 # Daftar Anggota Kelompok
 
