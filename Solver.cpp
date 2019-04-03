@@ -8,229 +8,191 @@ struct TNode{
 };
 
 TNode *head, *tail;
-
-void init(){
-    head=NULL;
-    tail=NULL;
-}
-
-int isEmpty(){
-    if(tail==NULL){
-		return 1;
-    }else{
-        return 0;
-    }
-}
+class list{
+private:
+	TNode *head=NULL, *tail=NULL;
+public:
+	int isEmpty(){
+		if(tail==NULL){
+			return 1;
+		}else{
+			return 0;
+		}
+	}
 // =====================================Task 1
-void tambahDepan(int file )
-{
-    TNode *baru;
-    baru =new TNode;
-    baru->data=file;
-    baru->next=NULL;
-    if(isEmpty()==1)
-    {
-        head=tail=baru;
-        tail->next=NULL;
-    }else{
-        baru->next=head;
-        head=baru;
-    }
-    cout<<"Input berhasil \n";
-}
-// =====================================Task 2
-void tambahBelakang(int file){
-    TNode *baru;
-    baru=new TNode;
-    baru->data=file;
-    baru->next=NULL;
-    if(isEmpty()==1){
-        head=baru;
-        tail=baru;
-        tail->next=NULL;
-    }else
-    {
-        tail->next=baru;
-        tail=baru;
-    }
-    cout<<"Input berhasil \n";
-}
-// =====================================Task 3
-void hapusDepan(){
-	TNode *hapus;
-	if (isEmpty()==0){
-		hapus = head;
-		head->data;
-		if(head != tail){
-			hapus = head;
-			head = head->next;
-			tail->next = head;
-			delete hapus;
-		}else{
-			head=NULL;
-			tail=NULL;
-		}
-		cout<<"\nTerhapus\n";
-	} else cout<<"\nNode Masih Kosong\n";
-}
-// =====================================Task 4
-void hapusBelakang(){
-	TNode *hapus,*help;
-	if (isEmpty()==0){
-		if(head == tail){
-			tail->data;
-			head = NULL;
-			tail = NULL;
-		}else{
-			help = head;
-			while(help->next != tail){
-				help = help->next;
-			}
-			hapus = tail;
-			tail = help;
-			hapus->data;
-			tail->next = head;
-			delete hapus;
-		}
-		cout<<"\nTerhapus\n";
-	} else cout<<"\nNode Masih Kosong\n";
-}
-// =====================================Task 5
-void tambah_pos(int pos, int input){
-	if(isEmpty()==0){
-		TNode *cur = new TNode;
-		TNode *tmp = new TNode;
-		TNode *baru = new TNode;
-		cur = head;
-		for(int i=1;i<pos;i++){
-			tmp = cur;
-			cur = cur->next;
-		}
-		baru->data = input;
-		tmp->next = baru;
-		baru->next = cur;
-		
-		cout<<"Input berhasil \n";
-	}else
-		cout << "Kosong" ;
-}
-
-// =====================================Task 6
-void delete_position(int pos)
-  {
-	if(isEmpty()==0){
-	    TNode *cur=new TNode;
-   		TNode *previous=new TNode;
-   		cur=head;
-  		 for(int i=1;i<pos;i++)
-  		 {
-    	previous=cur;
-   		cur=cur->next;
-   		}
-   		previous->next=cur->next;
-  		cout<<" berhasil dihapus \n";}
-
-	else
-		cout << "gagal" ;
-	
-}
-// =====================================Task 7
-void display()
+	void tambahDepan(int file)
+	{
+		TNode *baru;
+		baru =new TNode;
+		baru->data=file;
+		baru->next=NULL;
+		if(isEmpty()==1)
 		{
-			TNode *temp=new TNode;
-			temp=head;
-			while(temp!=NULL)
-			{
-				cout<<temp->data<<"\t";
-				temp=temp->next;
+			head=tail=baru;
+			tail->next=NULL;
+		}else{
+			baru->next=head;
+			head=baru;
+		}
+		cout<<"Input berhasil \n";
+	}
+// =====================================Task 2
+	void tambahBelakang(int file){
+		TNode *tmp = new TNode;
+		tmp->data = file;
+		if (head == NULL){
+			head = tmp;
+		}else{
+			tail = head;
+			while(tail->next != NULL){
+				tail = tail->next;
 			}
-}
-
-int hasil ()
-{
-	int val;
-	cout<<"\n--------------------------------------------------\n";
-	cout<<"----------------tampilan semua node----------------";
-	cout<<"\n--------------------------------------------------\n";
-	display();
-	cout<<"\n--------------------------------------------------\n";
-	cout<<"------------------tambah belakang------------------";
-	cout<<"\n--------------------------------------------------\n";
-	tambahBelakang(val);
-	display();
-	cout<<"\n--------------------------------------------------\n";
-	cout<<"-------------------tambahan awal------------------";
-	cout<<"\n--------------------------------------------------\n";
-	tambahDepan(val);
-	display();
-	
-	cout<<"\n--------------------------------------------------\n";
-	cout<<"--------------------hapus depan--------------------";
-	cout<<"\n--------------------------------------------------\n";
-	hapusDepan();
-	display();
-	cout<<"\n--------------------------------------------------\n";
-	cout<<"-------------------hapus akhir---------------------";
-	cout<<"\n--------------------------------------------------\n";
-	hapusBelakang();
-	display();
-	cout<<"\n--------------------------------------------------\n";
-	cout<<"-----------------hapus posisi node----------------";
-	cout<<"\n--------------------------------------------------\n";
-	void delete_position(int pos);
-	display();
-	cout<<"\n--------------------------------------------------\n";
-	system("pause");
-	return 0;
-}
-
+		tail->next = tmp;
+		}
+		cout<<"Input berhasil \n";
+	}
+// =====================================Task 3
+	void hapusDepan(){
+		if (isEmpty()==0){
+			TNode *tmp = new TNode;
+			tmp = head;
+			head = head->next;
+			delete tmp;
+			cout<<"\nTerhapus\n";
+		}else
+		cout<<"\nNode Masih Kosong\n";
+	}
+// =====================================Task 4
+	void hapusBelakang(){
+		TNode *hapus,*help;
+		if (isEmpty()==0){
+			TNode *skrg = new TNode;
+			TNode *sblm = new TNode;
+			skrg = head;
+			while(skrg->next != NULL){
+				sblm = skrg;
+				skrg = skrg->next;
+			}
+			tail =sblm;
+			sblm->next = NULL;
+			delete skrg;
+			cout<<"\nTerhapus\n";
+		}else
+		cout<<"\nNode Masih Kosong\n";
+	}
+// =====================================Task 5
+	void tambah_pos(int pos, int input){
+		if(isEmpty()==0){
+			TNode *cur = new TNode;
+			TNode *tmp = new TNode;
+			TNode *baru = new TNode;
+			if(pos == 1){
+				baru->data=input;
+				baru->next=NULL;
+				if(isEmpty()==1)
+				{
+					head=tail=baru;
+					tail->next=NULL;
+				}else{
+					baru->next=head;
+					head=baru;
+				}
+			}else{
+				cur = head;
+				for(int i=1;i<pos;i++){
+					tmp = cur;
+					cur = cur->next;
+				}
+				baru->data = input;
+				tmp->next = baru;
+				baru->next = cur;
+			}
+			cout<<"Input berhasil \n";
+		}else
+		cout << "Kosong" ;
+	}
+// =====================================Task 6
+	void delete_position(int posisi)
+	{
+		if(isEmpty()==0){
+			TNode *cur=new TNode;
+			TNode *previous=new TNode;
+			if(posisi == 1){
+				cur = head;
+				head = head->next;
+				delete cur;
+			}else{
+				cur=head;
+				for(int i=1;i<posisi;i++)
+				{
+					previous=cur;
+					cur=cur->next;
+				}
+				previous->next=cur->next;
+			}
+			cout<<"Deleted \n";
+		}
+		else
+			cout << "Kosong";
+	}
+	void show()
+	{
+		TNode *temp=new TNode;
+		temp=head;
+		while(temp!=NULL)
+		{
+			cout<<temp->data<<"  ";
+			temp=temp->next;
+		}
+	}
+};
 int nama_menu();
 
 int main()
-{	
+{
+	list obj;
 	int menu,val,pos;
 	char lagi = 'y';
 	do{
 		menu = nama_menu();
-		cin.ignore();
 		switch(menu){
 			case 1:
 					cout << "Masukan Angka : ";cin>>val;
-					tambahDepan(val);
+					obj.tambahDepan(val);
 					break;
 			case 2:
 					cout << "Masukan Angka : ";cin>>val;
-					tambahBelakang(val);
+					obj.tambahBelakang(val);
 					break;
 			case 3:
 					cout << "Ingin Menambah Node di posisi berapa : ";cin>>pos;
 					cout << "Masukan Angka : ";cin>>val;
-					tambah_pos(pos,val);
+					obj.tambah_pos(pos,val);
 					break;
 			case 4:
-					cout << "Akan Menghapus Node Paling Depan";
-					hapusDepan();
+					cout << "Menghapus Node Paling Depan";
+					obj.hapusDepan();
 					break;
 			case 5:
-					cout << "Akan Menghapus Node Paling Belakang";
-					hapusBelakang();
+					cout << "Menghapus Node Paling Belakang";
+					obj.hapusBelakang();
 					break;
 			case 6:
 					cout << "Ingin Menghapus Node di posisi berapa : ";cin>>pos;
-					void delete_position(int pos);
+					obj.delete_position(pos);
 					break;
-			case 7:		cout<<"tampilan seluruh node : ";
-					int hasil();
-					
-					//show();
+			case 7:
+					cout<<"Tampilan seluruh node : ";
+					obj.show();
 					break;
+			case 8:
+					exit(0);
 			default:
 					cout <<"\t\nPilihan tidak ada";
 					cin.get();
-					system("cls");
 					break;
-		}cout << endl << "Kembali Ke Menu ?(y/n) ";cin>>lagi;
-		system("cls");
+		}cout << endl << "Kembali Ke Menu ? (y/n) ";cin>>lagi;
+		system("clear");
 	}while(lagi=='y');
 		cin.get();
 		return 0;
@@ -238,13 +200,13 @@ int main()
 
 int nama_menu(){
 	cout<<"https://github.com/BrondoL/Single-LinkedList"<<endl;
-	cout<<"==========================================================="<<endl;
+	cout<<"====================================================="<<endl;
 	cout<<"DAFTAR ANGGOTA KELOMPOK : "<<endl;
 	cout<<"Nama : 1. Aulia Ahmad Nabil\t (1817051074)"<<endl;
 	cout<<"       2. Arbi Hidayatullah\t (1817051045)"<<endl;
 	cout<<"       3. Asbiq Al Alawi\t (1817051026)"<<endl;
 	cout<<"       4. Pandi Barep Arianza\t (1817051002)"<<endl;
-	cout<<"==========================================================="<<endl<<endl;
+	cout<<"====================================================="<<endl<<endl;
 	cout<<"\t\t    SINGLE LINKED LIST"<<endl;
 	int menu;
 	cout << "MENU : "<<endl<<endl;
@@ -254,9 +216,9 @@ int nama_menu(){
 	cout << "4. Hapus Node di paling depan"<<endl;
 	cout << "5. Hapus Node di paling belakang"<<endl;
 	cout << "6. Hapus Node di posisi tertentu"<<endl;
-	cout << "7. Tampilkan Semua isi Node"<<endl<<endl;
+	cout << "7. Tampilkan Semua isi Node"<<endl;
+	cout << "8. Exit..."<<endl<<endl;
 	cout << "Pilihan : "; cin >> menu;
-	cout << menu;
-	system("cls");
+	system("clear");
 	return menu;
 }
